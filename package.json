@@ -1,6 +1,6 @@
 {
   "name": "error-capture-middleware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An express/connect dev middleware that magically makes any errors that occurred while serving css/js appear on page",
   "main": "index.js",
   "scripts": {
