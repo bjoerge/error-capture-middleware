@@ -1,0 +1,35 @@
+{
+  "name": "error-capture-middleware",
+  "version": "0.0.0",
+  "description": "An express/connect dev middleware that magically makes any errors that occurred while serving css/js appear on page",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bjoerge/appearror"
+  },
+  "keywords": [
+    "express",
+    "connect",
+    "errors",
+    "dev",
+    "development",
+    "error",
+    "handler",
+    "request"
+  ],
+  "author": "Bjørge Næss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjoerge/appearror/issues"
+  },
+  "homepage": "https://github.com/bjoerge/appearror",
+  "devDependencies": {
+    "express": "^4.10.2",
+    "mocha": "^2.0.1",
+    "supertest": "^0.14.0",
+    "tap": "^0.4.13"
+  }
+}
