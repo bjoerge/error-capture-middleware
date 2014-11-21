@@ -4,7 +4,7 @@ var express = require('express');
 var assert = require('assert');
 var vm = require('vm');
 
-var appearror = require("../");
+var capture = require("../");
 
 function createApp() {
   var app = express();
@@ -37,8 +37,8 @@ describe('non-failing requests', function() {
   it('handles js as normal', function(done) {
 
     var app = createApp();
-    app.use(appearror.js());
-    app.use(appearror.css());
+    app.use(capture.js());
+    app.use(capture.css());
 
     request(app)
       .get('/nonfailing.js')
@@ -48,8 +48,8 @@ describe('non-failing requests', function() {
   it('handles css as normal', function(done) {
 
     var app = createApp();
-    app.use(appearror.js());
-    app.use(appearror.css());
+    app.use(capture.js());
+    app.use(capture.css());
 
     request(app)
       .get('/nonfailing.css')
@@ -62,7 +62,7 @@ describe('failing js requests', function() {
   it('is returning a throw statement', function(done) {
     var app = createApp();
 
-    app.use(appearror.js({
+    app.use(capture.js({
       throws: true,  // on by default
       body: true  // off by default
     }));
@@ -104,7 +104,7 @@ describe('failing js requests', function() {
 describe('failing css requests', function() {
   it('is returning a body::after selector with error as content', function(done) {
     var app = createApp();
-    app.use(appearror.css());
+    app.use(capture.css());
     request(app)
       .get('/fail.css')
       .expect(200)
